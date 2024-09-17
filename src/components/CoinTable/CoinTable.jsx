@@ -5,7 +5,7 @@ import { fetchCoinData } from "../../services/fetchCoinData"
 const CoinTable = ({currency}) => {
 
     const [page, setPage] = useState(1)
-    const {data, isError, isLoading, error} = useQuery(['coins', page], ()=>fetchCoinData(page, currency), {
+    const {data, isError, isLoading, error} = useQuery(['coins', page, currency], ()=>fetchCoinData(page, currency), {
         // retry: 2,
         // retryDelay: 1000,
         cacheTime: 1000 * 60 * 2,
